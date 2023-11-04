@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Temps de travail</title>
+</head>
+<body>
+
+    <header>Calcul du temps de travail</header>
+
+    <div class="form_box">
+        <form id="workTimeForm">
+            <input type="time" id="arrivalTime" name="arrivalTime" required>
+            <input type="time" id="startBreakTime" name="startBreakTime" required>
+            <input type="time" id="endBreakTime" name="endBreakTime" required>
+            <input type="time" id="departureTime" name="departureTime" required>
+
+            <button type="submit">Calculer</button>
+        </form>
+        <span id="result"></span>
+    </div>
+
+    <script src="calcul.js"></script>
+</body>
+</html>
