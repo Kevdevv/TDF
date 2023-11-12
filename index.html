@@ -9,7 +9,9 @@
 <body>
 
     <header>Calcul du temps de travail</header>
-
+    <div class="box_result">
+        <span id="result"></span>
+    </div>
     <div class="form_box">
         <form id="workTimeForm">
             <input type="time" id="arrivalTime" name="arrivalTime" required>
@@ -21,7 +23,6 @@
             <button class="button" type="button" id="calculateDeparture">Calculer Heure de Départ</button>
 
         </form>
-        <span id="result"></span>
     </div>
 
     <script src="calcul.js"></script>

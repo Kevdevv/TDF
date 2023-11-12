@@ -22,7 +22,21 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4vw;
+    margin-top: 2vw;
+}
+
+.box_result {
+    text-align: center;
+    margin-top: 2vw;
+    width: 100%;
+
+}
+
+#workTimeForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 3vw;
 }
 
 input[type="time"] {
