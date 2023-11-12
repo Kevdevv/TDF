@@ -35,3 +35,38 @@ document.getElementById('workTimeForm').onsubmit = function(event) {
     // Affiche le résultat
     document.getElementById('result').textContent = `Temps de travail total : ${hours}h${minutes}.`;
 };
+
+document.getElementById('calculateDeparture').onclick = function () {
+    // Récupère les valeurs des champs de saisie nécessaires
+    let arrivalTime = document.getElementById('arrivalTime').value;
+    let startBreakTime = document.getElementById('startBreakTime').value;
+    let endBreakTime = document.getElementById('endBreakTime').value;
+
+    // Crée des objets Date pour les heures d'arrivée et de pause
+    let arrivalDateTime = new Date(`1970-01-01T${arrivalTime}Z`);
+    let startBreakDateTime = new Date(`1970-01-01T${startBreakTime}Z`);
+    let endBreakDateTime = new Date(`1970-01-01T${endBreakTime}Z`);
+
+    // Calcule le temps travaillé avant la pause
+    let workMorningMilliseconds = startBreakDateTime - arrivalDateTime;
+
+    // Ajoute 7 heures et 24 minutes en millisecondes
+    let desiredWorkTime = 7 * 60 * 60 * 1000 + 24 * 60 * 1000; // 7 heures et 24 minutes
+
+    // Calcule le temps restant à travailler après la pause
+    let remainingWorkMilliseconds = desiredWorkTime - workMorningMilliseconds;
+
+    // Calcule l'heure de départ nécessaire
+    let necessaryDepartureDateTime = new Date(endBreakDateTime.getTime() + remainingWorkMilliseconds);
+
+    // Formate l'heure de départ pour l'affichage
+    let departureHour = necessaryDepartureDateTime.getUTCHours();
+    let departureMinutes = necessaryDepartureDateTime.getUTCMinutes();
+
+    if (departureMinutes < 10) {
+        departureMinutes = '0' + departureMinutes;
+    }
+
+    // Affiche le résultat
+    document.getElementById('result').textContent = `Heure de départ nécessaire : ${departureHour}h${departureMinutes}.`;
+};
