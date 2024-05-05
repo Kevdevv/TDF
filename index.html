@@ -8,19 +8,28 @@
 </head>
 <body>
 
-    <header>Calcul du temps de travail</header>
+    <header>
+        <img class="logo_krys" src="Logo.png">
+    </header>
     <div class="box_result">
         <span id="result"></span>
     </div>
     <div class="form_box">
         <form id="workTimeForm">
-            <input type="time" id="arrivalTime" name="arrivalTime" required>
-            <input type="time" id="startBreakTime" name="startBreakTime" required>
-            <input type="time" id="endBreakTime" name="endBreakTime" required>
-            <input type="time" id="departureTime" name="departureTime" required>
+            <div class="time_up">
+                <input type="time" id="arrivalTime" name="arrivalTime" required>
+                <input type="time" id="startBreakTime" name="startBreakTime" required>
+            </div>
 
-            <button class="button" type="submit" id="calculateTotal">Calculer Temps Total</button>
-            <button class="button" type="button" id="calculateDeparture">Calculer Heure de Départ</button>
+            <div class="time_up">
+                <input type="time" id="endBreakTime" name="endBreakTime" required>
+                <input type="time" id="departureTime" name="departureTime" required>
+            </div>
+            
+            <div class="time_up box_button">
+                <button class="button" type="submit" id="calculateTotal">Calculer Temps Total</button>
+                <button class="button" type="button" id="calculateDeparture">Calculer Heure de Départ</button>
+            </div>
 
         </form>
     </div>
